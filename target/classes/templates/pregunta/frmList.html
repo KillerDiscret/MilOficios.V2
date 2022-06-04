@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+<title>Lista de Preguntas</title>
+</head>
+<body>
+
+	<header th:replace="master/master :: header"> </header>
+
+	<h2>Formulario de Listar</h2>
+
+	<div class="container">
+		<div>
+			<div class="table-responsive">
+
+				<table class="table table-white">
+
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Pregunta</th>
+							
+							<th>Operación</th>
+							<th>Operación</th>
+
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr th:each="p:${listaPreguntas}">
+							<td th:text="${p.id}"></td>
+							<td th:text="${p.text}"></td>
+							<td ><a th:href="@{/pregunta/eliminar?id=}+${p.id}">Eliminar</a></td>
+							<td ><a th:href="@{'/pregunta/irmodificar/'+${p.id}}">Modificar</a></td>
+							
+						</tr>
+
+					</tbody>
+
+				</table>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+
+
+</body>
+</html>
