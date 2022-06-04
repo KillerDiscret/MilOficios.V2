@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+<title>Lista de Roles</title>
+</head>
+<body>
+
+	<header th:replace="master/master :: header"> </header>
+
+	<h2>Formulario de Listar</h2>
+
+	<div class="container">
+		<div>
+			<div class="table-responsive">
+
+				<table class="table table-white">
+
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Tipo de Rol</th>
+							
+							<th>Operación</th>
+							<th>Operación</th>
+
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr th:each="r:${listaRoles}">
+							<td th:text="${r.id}"></td>
+							<td th:text="${r.type}"></td>
+							<td ><a th:href="@{/rol/eliminar?id=}+${r.id}">Eliminar</a></td>
+							<td ><a th:href="@{'/rol/irmodificar/'+${r.id}}">Modificar</a></td>
+							
+						</tr>
+
+					</tbody>
+
+				</table>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+
+
+</body>
+</html>
