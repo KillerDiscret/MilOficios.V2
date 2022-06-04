@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="master/master :: head">
+	<meta charset="UTF-8">
+	<title>Modificar Usuario Rol</title>
+</head>
+
+<body>
+
+	<header th:replace="master/master :: header"> </header>
+
+	<h2>Formulario de Modificar</h2>
+
+	<div class="container">
+		<div>
+			<form th:action="@{/usuariorol/modificar}" method="post" 
+			th:object="${ssa}">
+
+				<div class="col-sm-12">
+					<label class="form-label">Id: </label> 
+					<input type="text"
+						class="form-control" th:field="*{id}"></input>
+				</div>
+
+
+				<div class="form-group">
+					<label for="usuario">Nombre Usuario:</label>
+
+					<select class="form-select" th:field="*{usuario.id}">
+						<option 
+						th:each="lu: ${listaUsuarios}" 
+						th:value="${lu.id}" 
+						th:text="${lu.username}"
+						th:selected="(${lu.id} == *{usuario.id})"></option>
+					</select>
+				</div>
+				
+				<div class="form-group">
+					<label for="usuario">Rol:</label>
+
+					<select class="form-select" th:field="*{rol.id}">
+						<option 
+						th:each="lr: ${listaRoles}" 
+						th:value="${lr.id}" 
+						th:text="${lr.type}"
+						th:selected="(${lr.id} == *{rol.id})"></option>
+					</select>
+
+				</div>
+
+				<div class="col-sm-12">
+					<input type="submit" class="btn btn-dark" value="Actualizar"></input>
+				</div>
+
+			</form>
+
+		</div>
+
+
+	</div>
+
+
+
+
+
+</body>
+
+</html>

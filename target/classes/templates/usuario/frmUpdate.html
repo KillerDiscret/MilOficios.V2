@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+<title>Modificar Usuario</title>
+</head>
+<body>
+
+	<header th:replace="master/master :: header"> </header>
+
+	<h2>Formulario de Modificar</h2>
+
+	<div class="container">
+		<div>
+			<form th:action="@{/usuario/modificar}" method="post"
+				th:object="${usa}">
+
+
+				<div class="col-sm-12">
+					<label class="form-label">Id: </label> 
+					<input type="text"
+						class="form-control" th:field="*{id}"></input>
+				</div>
+				
+				<div class="col-sm-12">
+					<label class="form-label">Usuario: </label> 
+					<input type="text"
+						class="form-control" th:field="*{username}"></input>
+				</div>
+				
+				<div class="col-sm-12">
+					<label class="form-label">Contraseña: </label> 
+					<input type="text"
+						class="form-control" th:field="*{password}"></input>
+				</div>
+				
+				<div class="col-sm-12">
+					<label class="form-label">Estado: </label> 
+					<input type="text"
+						class="form-control" th:field="*{state}"></input>
+				</div>
+				
+				<div class="col-sm-12">
+					<input type="submit"
+						class="btn btn-dark" value="Actualizar"></input>
+				</div>
+				
+			</form>
+
+		</div>
+
+
+	</div>
+
+
+
+
+
+</body>
+</html>
