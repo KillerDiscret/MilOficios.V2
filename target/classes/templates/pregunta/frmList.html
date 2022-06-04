@@ -9,7 +9,8 @@
 
 	<header th:replace="master/master :: header"> </header>
 
-	<h2>Formulario de Listar</h2>
+	<h2 style="padding-top: 40px; padding-left: 50px;">Formulario de
+		Listar</h2>
 
 	<div class="container">
 		<div>
@@ -21,7 +22,7 @@
 						<tr>
 							<th>Id</th>
 							<th>Pregunta</th>
-							
+
 							<th>Operación</th>
 							<th>Operación</th>
 
@@ -32,9 +33,9 @@
 						<tr th:each="p:${listaPreguntas}">
 							<td th:text="${p.id}"></td>
 							<td th:text="${p.text}"></td>
-							<td ><a th:href="@{/pregunta/eliminar?id=}+${p.id}">Eliminar</a></td>
-							<td ><a th:href="@{'/pregunta/irmodificar/'+${p.id}}">Modificar</a></td>
-							
+							<td><a th:href="@{/pregunta/eliminar?id=}+${p.id}">Eliminar</a></td>
+							<td><a th:href="@{'/pregunta/irmodificar/'+${p.id}}">Modificar</a></td>
+
 						</tr>
 
 					</tbody>
@@ -47,7 +48,7 @@
 
 	</div>
 
-
+	<footer th:replace="master/master :: footer"></footer>
 
 
 
