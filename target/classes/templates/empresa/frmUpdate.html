@@ -9,7 +9,8 @@
 
 	<header th:replace="master/master :: header"> </header>
 
-	<h2>Formulario de Modificar</h2>
+	<h2 style="padding-top: 40px; padding-left: 50px;">Formulario de
+		Modificar</h2>
 
 	<div class="container">
 		<div>
@@ -17,47 +18,67 @@
 				th:object="${esa}">
 
 
-				<div class="col-sm-12">
-					<label class="form-label">Id: </label> 
-					<input type="text"
-						class="form-control" th:field="*{id}"></input>
+				<div class="row justify-content-center">
+					<div class="col-4">
+						<h3 th:text="'Editando Empresa: ' + ${esa.name}"></h3>
+					</div>
 				</div>
-				
-				<div class="col-sm-12">
-					<label class="form-label">Ruc: </label> 
-					<input type="text"
-						class="form-control" th:field="*{ruc}"></input>
+
+				<div class="row justify-content-center">
+					<div class="col-4" style="margin-top: 10px; pointer-events: none;">
+						<label class="form-label">Id: </label> <input type="text"
+							class="form-control" th:field="*{id}"></input>
+					</div>
 				</div>
-				
-				<div class="col-sm-12">
-					<label class="form-label">Razón Social: </label> 
-					<input type="text"
-						class="form-control" th:field="*{name}"></input>
+
+
+				<div class="row justify-content-center">
+					<div class="col-4" style="margin-top: 10px;">
+						<label class="form-label">Ruc: </label> <input type="text"
+							class="form-control" th:field="*{ruc}" minlength="10"
+							maxlength="10" required="required"></input>
+					</div>
 				</div>
-				
-				<div class="col-sm-12">
-					<label class="form-label">Teléfono: </label> 
-					<input type="text"
-						class="form-control" th:field="*{phone}"></input>
+
+				<div class="row justify-content-center">
+					<div class="col-4" style="margin-top: 10px;">
+						<label class="form-label">Razón Social: </label> <input
+							type="text" class="form-control" th:field="*{name}" minlength="3"
+							maxlength="20" required="required"></input>
+					</div>
 				</div>
-				
-				<div class="col-sm-12">
-					<label class="form-label">Dirección: </label> 
-					<input type="text"
-						class="form-control" th:field="*{address}"></input>
+
+				<div class="row justify-content-center">
+					<div class="col-4" style="margin-top: 10px;">
+						<label class="form-label">Teléfono: </label> <input type="text"
+							class="form-control" th:field="*{phone}" minlength="9"
+							maxlength="9" required="required"></input>
+					</div>
 				</div>
-				
-				<div class="col-sm-12">
-					<label class="form-label">Email: </label> 
-					<input type="text"
-						class="form-control" th:field="*{email}"></input>
+
+
+				<div class="row justify-content-center">
+					<div class="col-4" style="margin-top: 10px;">
+						<label class="form-label">Dirección: </label> <input type="text"
+							class="form-control" th:field="*{address}" minlength="4"
+							maxlength="50" required="required"></input>
+					</div>
 				</div>
-				
-				<div class="col-sm-12">
-					<input type="submit"
-						class="btn btn-dark" value="Actualizar"></input>
+
+				<div class="row justify-content-center">
+					<div class="col-4" style="margin-top: 10px;">
+						<label class="form-label">Email: </label> <input type="text"
+							class="form-control" th:field="*{email}" minlength="5"
+							maxlength="40" required="required"></input>
+					</div>
 				</div>
-				
+
+				<div class="row justify-content-center">
+					<div class="col-4" style="margin-top: 10px;">
+						<input type="submit" class="btn btn-dark" value="Actualizar"></input>
+					</div>
+				</div>
+
 			</form>
 
 		</div>
@@ -65,7 +86,7 @@
 
 	</div>
 
-
+	<footer th:replace="master/master :: footer"></footer>
 
 
 

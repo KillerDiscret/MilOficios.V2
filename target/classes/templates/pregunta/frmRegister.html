@@ -9,24 +9,29 @@
 
 	<header th:replace="master/master :: header"> </header>
 
-	<h2>Formulario de Registrar</h2>
+	<h2 style="padding-top: 40px; padding-left: 50px;">Formulario de
+		Registrar</h2>
 
 	<div class="container">
 		<div>
-			<form th:action="@{/pregunta/guardar}" method="post"
-				th:object="${p}">
+			<form th:action="@{/pregunta/guardar}" method="post" th:object="${p}">
 
-				<div class="col-sm-12">
-					<label class="form-label">Pregunta: </label> 
-					<input type="text"
-						class="form-control" th:field="*{text}"></input>
+
+				<div class="row justify-content-center">
+					<div class="col-4">
+						<label class="form-label">Pregunta: </label> <input type="text"
+							class="form-control" th:field="*{text}" minlength="4"
+							maxlength="50" required="required"></input>
+					</div>
 				</div>
-				
-				<div class="col-sm-12">
-					<input type="submit"
-						class="btn btn-dark" value="Registrar"></input>
+
+
+				<div class="row justify-content-center">
+					<div class="col-4" style="margin-top: 10px;">
+						<input type="submit" class="btn btn-dark" value="Registrar"></input>
+					</div>
 				</div>
-				
+
 			</form>
 
 		</div>
@@ -35,7 +40,7 @@
 	</div>
 
 
-
+	<footer th:replace="master/master :: footer"></footer>
 
 
 </body>

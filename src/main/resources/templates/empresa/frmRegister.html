@@ -9,48 +9,64 @@
 
 	<header th:replace="master/master :: header"> </header>
 
-	<h2>Formulario de Registrar</h2>
+	<h2 style="padding-top: 40px; padding-left: 50px;">Formulario de
+		Registrar</h2>
 
 	<div class="container">
 		<div>
-			<form th:action="@{/empresa/guardar}" method="post"
-				th:object="${e}">
+			<form th:action="@{/empresa/guardar}" method="post" th:object="${e}">
 
-				<div class="col-sm-12">
-					<label class="form-label">Ruc: </label> 
-					<input type="text"
-						class="form-control" th:field="*{ruc}"></input>
+
+				<div class="row justify-content-center">
+					<div class="col-4">
+						<label class="form-label">Ruc: </label> <input type="text"
+							class="form-control" th:field="*{ruc}" minlength="10"
+							maxlength="10" required="required"></input>
+					</div>
 				</div>
-				
-				<div class="col-sm-12">
-					<label class="form-label">Razón Social: </label> 
-					<input type="text"
-						class="form-control" th:field="*{name}"></input>
+
+				<div class="row justify-content-center">
+					<div class="col-4">
+						<label class="form-label">Razón Social: </label> <input
+							type="text" class="form-control" th:field="*{name}" minlength="4"
+							maxlength="20" required="required"></input>
+					</div>
 				</div>
-				
-				<div class="col-sm-12">
-					<label class="form-label">Teléfono: </label> 
-					<input type="text"
-						class="form-control" th:field="*{phone}"></input>
+
+				<div class="row justify-content-center">
+					<div class="col-4">
+						<label class="form-label">Teléfono: </label> <input type="text"
+							class="form-control" th:field="*{phone}" minlength="9"
+							maxlength="9" required="required"></input>
+					</div>
 				</div>
+
 				
-				<div class="col-sm-12">
-					<label class="form-label">Dirección: </label> 
-					<input type="text"
-						class="form-control" th:field="*{address}"></input>
+
+				<div class="row justify-content-center">
+					<div class="col-4">
+						<label class="form-label">Dirección: </label> <input type="text"
+							class="form-control" th:field="*{address}" minlength="4"
+							maxlength="50" required="required"></input>
+					</div>
 				</div>
-				
-				<div class="col-sm-12">
-					<label class="form-label">Email: </label> 
-					<input type="text"
-						class="form-control" th:field="*{email}"></input>
+
+
+				<div class="row justify-content-center">
+					<div class="col-4">
+						<label class="form-label">Email: </label> <input type="text"
+							class="form-control" th:field="*{email}" minlength="6"
+							maxlength="40" required="required"></input>
+					</div>
 				</div>
-				
-				<div class="col-sm-12">
-					<input type="submit"
-						class="btn btn-dark" value="Registrar"></input>
+
+
+				<div class="row justify-content-center">
+					<div class="col-4" style="margin-top: 10px;">
+						<input type="submit" class="btn btn-dark" value="Registrar"></input>
+					</div>
 				</div>
-				
+
 			</form>
 
 		</div>
@@ -58,7 +74,7 @@
 
 	</div>
 
-
+	<footer th:replace="master/master :: footer"></footer>
 
 
 
