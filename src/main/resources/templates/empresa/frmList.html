@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+<title>Lista de Empresas</title>
+</head>
+<body>
+
+	<header th:replace="master/master :: header"> </header>
+
+	<h2>Formulario de Listar</h2>
+
+	<div class="container">
+		<div>
+			<div class="table-responsive">
+
+				<table class="table table-white">
+
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Ruc</th>
+							<th>Razón Social</th>
+							<th>Teléfono</th>
+							<th>Dirección</th>
+							<th>Email</th>
+							
+							<th>Operación</th>
+							<th>Operación</th>
+
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr th:each="e:${listaEmpresas}">
+							<td th:text="${e.id}"></td>
+							<td th:text="${e.ruc}"></td>
+							<td th:text="${e.name}"></td>
+							<td th:text="${e.phone}"></td>
+							<td th:text="${e.address}"></td>
+							<td th:text="${e.email}"></td>
+							<td ><a th:href="@{/empresa/eliminar?id=}+${e.id}">Eliminar</a></td>
+							<td ><a th:href="@{'/empresa/irmodificar/'+${e.id}}">Modificar</a></td>
+							
+						</tr>
+
+					</tbody>
+
+				</table>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+
+
+</body>
+</html>

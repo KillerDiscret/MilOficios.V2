@@ -23,7 +23,6 @@ body, html {
 	margin: 0;
 	font-family: Arial, Helvetica, sans-serif;
 }
-
 </style>
 
 
@@ -87,7 +86,7 @@ body, html {
 								<li><a class="dropdown-item" th:href="@{/distrito/nuevo}">Registrar</a></li>
 								<li><a class="dropdown-item" th:href="@{/distrito/listar}">Listar</a></li>
 							</ul></li>
-							
+
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownMenuLink" role="button"
@@ -97,7 +96,7 @@ body, html {
 								<li><a class="dropdown-item" th:href="@{/pregunta/nuevo}">Registrar</a></li>
 								<li><a class="dropdown-item" th:href="@{/pregunta/listar}">Listar</a></li>
 							</ul></li>
-							
+
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownMenuLink" role="button"
@@ -107,7 +106,7 @@ body, html {
 								<li><a class="dropdown-item" th:href="@{/rol/nuevo}">Registrar</a></li>
 								<li><a class="dropdown-item" th:href="@{/rol/listar}">Listar</a></li>
 							</ul></li>
-						
+
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownMenuLink" role="button"
@@ -117,7 +116,7 @@ body, html {
 								<li><a class="dropdown-item" th:href="@{/usuario/nuevo}">Registrar</a></li>
 								<li><a class="dropdown-item" th:href="@{/usuario/listar}">Listar</a></li>
 							</ul></li>
-							
+
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownMenuLink" role="button"
@@ -125,7 +124,18 @@ body, html {
 							<ul class="dropdown-menu"
 								aria-labelledby="navbarDropdownMenuLink">
 								<li><a class="dropdown-item" th:href="@{/usuariorol/nuevo}">Registrar</a></li>
-								<li><a class="dropdown-item" th:href="@{/usuariorol/listar}">Listar</a></li>
+								<li><a class="dropdown-item"
+									th:href="@{/usuariorol/listar}">Listar</a></li>
+							</ul></li>
+
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false"> Empresa</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" th:href="@{/empresa/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item" th:href="@{/empresa/listar}">Listar</a></li>
 							</ul></li>
 
 					</ul>

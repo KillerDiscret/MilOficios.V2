@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+<title>Registrar Empresa</title>
+</head>
+<body>
+
+	<header th:replace="master/master :: header"> </header>
+
+	<h2>Formulario de Registrar</h2>
+
+	<div class="container">
+		<div>
+			<form th:action="@{/empresa/guardar}" method="post"
+				th:object="${e}">
+
+				<div class="col-sm-12">
+					<label class="form-label">Ruc: </label> 
+					<input type="text"
+						class="form-control" th:field="*{ruc}"></input>
+				</div>
+				
+				<div class="col-sm-12">
+					<label class="form-label">Razón Social: </label> 
+					<input type="text"
+						class="form-control" th:field="*{name}"></input>
+				</div>
+				
+				<div class="col-sm-12">
+					<label class="form-label">Teléfono: </label> 
+					<input type="text"
+						class="form-control" th:field="*{phone}"></input>
+				</div>
+				
+				<div class="col-sm-12">
+					<label class="form-label">Dirección: </label> 
+					<input type="text"
+						class="form-control" th:field="*{address}"></input>
+				</div>
+				
+				<div class="col-sm-12">
+					<label class="form-label">Email: </label> 
+					<input type="text"
+						class="form-control" th:field="*{email}"></input>
+				</div>
+				
+				<div class="col-sm-12">
+					<input type="submit"
+						class="btn btn-dark" value="Registrar"></input>
+				</div>
+				
+			</form>
+
+		</div>
+
+
+	</div>
+
+
+
+
+
+</body>
+</html>
