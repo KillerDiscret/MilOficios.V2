@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+<title>Lista de Distritos</title>
+</head>
+<body>
+
+	<header th:replace="master/master :: header"> </header>
+
+	<h2 style="padding-top: 40px; padding-left: 50px;">Formulario de
+		Listar</h2>
+
+	<div class="container">
+		<div>
+			<div class="table-responsive">
+
+				<table class="table table-white">
+
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Nombre Distrito</th>
+							<th>Provincia</th>
+
+							<th>Operación</th>
+							<th>Operación</th>
+
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr th:each="d:${listaDistritos}">
+							<td th:text="${d.id}"></td>
+							<td th:text="${d.name}"></td>
+							<td th:text="${d.provincia.name}"></td>
+
+							<td><a th:href="@{/distrito/eliminar?id=}+${d.id}">Eliminar</a></td>
+							<td><a th:href="@{'/distrito/irmodificar/'+${d.id}}">Modificar</a></td>
+
+						</tr>
+
+					</tbody>
+
+				</table>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+
+
+</body>
+</html>

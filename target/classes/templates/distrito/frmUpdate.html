@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+<title>Modificar Distrito</title>
+</head>
+<body>
+
+	<header th:replace="master/master :: header"> </header>
+
+	<h2 style="padding-top: 40px; padding-left: 50px;">Formulario de
+		Modificar</h2>
+
+	<div class="container">
+		<div>
+			<form th:action="@{/distrito/modificar}" method="post"
+				th:object="${dsa}">
+
+				<div class="row justify-content-center">
+					<div class="col-4">
+						<h3 th:text="'Editando Distrito: ' + ${dsa.name}"></h3>
+					</div>
+				</div>
+
+				<div class="row justify-content-center">
+					<div class="col-4" style="margin-top: 10px; pointer-events: none;">
+						<label class="form-label">Id: </label> <input type="text"
+							class="form-control" th:field="*{id}"></input>
+					</div>
+				</div>
+
+
+				<div class="row justify-content-center">
+					<div class="col-4" style="margin-top: 10px;">
+						<label class="form-label">Nombre de Distrito: </label> <input
+							type="text" class="form-control" th:field="*{name}" minlength="3"
+							maxlength="20" required="required"></input>
+					</div>
+				</div>
+
+
+				<div class="row justify-content-center">
+					<div class="col-4" style="margin-top: 10px;">
+						<label for="sede">Provincia:</label> <select class="form-select"
+							aria-label="Default select example" th:field="*{provincia.id}">
+							<option th:each="lp: ${listaProvincias}" th:value="${lp.id}"
+								th:text="${lp.name}" th:selected="(${lp.id} == *{provincia.id})"></option>
+						</select>
+					</div>
+				</div>
+
+
+				<div class="row justify-content-center">
+					<div class="col-4" style="margin-top: 10px;">
+						<input type="submit" class="btn btn-dark" value="Actualizar"></input>
+					</div>
+				</div>
+
+			</form>
+
+		</div>
+
+
+	</div>
+
+
+
+
+
+</body>
+</html>
