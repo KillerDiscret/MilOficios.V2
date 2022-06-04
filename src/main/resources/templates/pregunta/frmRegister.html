@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+<title>Registrar Pregunta</title>
+</head>
+<body>
+
+	<header th:replace="master/master :: header"> </header>
+
+	<h2>Formulario de Registrar</h2>
+
+	<div class="container">
+		<div>
+			<form th:action="@{/pregunta/guardar}" method="post"
+				th:object="${p}">
+
+				<div class="col-sm-12">
+					<label class="form-label">Pregunta: </label> 
+					<input type="text"
+						class="form-control" th:field="*{text}"></input>
+				</div>
+				
+				<div class="col-sm-12">
+					<input type="submit"
+						class="btn btn-dark" value="Registrar"></input>
+				</div>
+				
+			</form>
+
+		</div>
+
+
+	</div>
+
+
+
+
+
+</body>
+</html>
