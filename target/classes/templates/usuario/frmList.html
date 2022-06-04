@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+<title>Lista de Usuarios</title>
+</head>
+<body>
+
+	<header th:replace="master/master :: header"> </header>
+
+	<h2>Formulario de Listar</h2>
+
+	<div class="container">
+		<div>
+			<div class="table-responsive">
+
+				<table class="table table-white">
+
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Usuario</th>
+							<th>Contraseña</th>
+							<th>Estado</th>
+							
+							<th>Operación</th>
+							<th>Operación</th>
+
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr th:each="u:${listaUsuarios}">
+							<td th:text="${u.id}"></td>
+							<td th:text="${u.username}"></td>
+							<td th:text="${u.password}"></td>
+							<td th:text="${u.state}"></td>
+							<td ><a th:href="@{/usuario/eliminar?id=}+${u.id}">Eliminar</a></td>
+							<td ><a th:href="@{'/usuario/irmodificar/'+${u.id}}">Modificar</a></td>
+							
+						</tr>
+
+					</tbody>
+
+				</table>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+
+
+</body>
+</html>
